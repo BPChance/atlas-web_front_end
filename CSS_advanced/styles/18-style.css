@@ -101,7 +101,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 } 
 
-.nav-item {
+.nav .nav-item {
     font-family: var(--nav-item-font-family);
     font-weight: var(--nav-item-font-weight);
     font-size: var(--nav-item-font-size);
@@ -110,12 +110,12 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 0 calc(3 * var(--font-size-medium)) 0;
 }
 
-.nav-link {
+.nav .nav-link {
     display: block;
     padding: calc(0.5 * var(--font-size-medium)) var(--font-size-medium);
 }
 
-.nav-link:hover {
+.nav .nav-link:hover {
     color: var(--nav-item-link-hover);
 }
 
