@@ -107,7 +107,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: var(--nav-item-font-size);
     letter-spacing: var(--nav-item-letter-spacing);
     display: var(--nav-item-display);
-    margin: 0 0 calc(3 * var(--font-size-medium)) 0;
+    margin: var(--nav-item-margin);
 }
 
 .nav .nav-link {
