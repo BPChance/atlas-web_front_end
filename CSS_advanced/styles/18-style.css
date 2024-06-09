@@ -153,7 +153,7 @@ h1, h2, h3, h4, h5, h6 {
     --nav-item-font-size: var(--font-size-medium);
     --nav-item-letter-spacing: 4%;
     --nav-item-display: inline-block;
-    --nav-item-margin: 0 0 calc(3 * var(--font-size-medium)) 0;
+    --nav-item-margin: 0 0 3rem 0;
     --nav-item-link-hover: var(--color-primary);
 }
 
