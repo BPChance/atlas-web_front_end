@@ -1,1 +1,1 @@
-dev tools read me
+Introduction to dev tools. This project involves using Google Chromes dev tools to manipulate the web page https://dev-tools.hbtn.info/. During this project I learned how developers are to use developer tools to improve workflow and workout issues within the webpage.
