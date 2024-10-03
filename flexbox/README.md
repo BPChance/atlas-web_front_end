@@ -1,1 +1,2 @@
-flex box read me unfinished
+# Flexbox
+This project focuses on learning CSS flexbox technique
