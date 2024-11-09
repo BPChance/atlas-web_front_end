@@ -1,1 +1,2 @@
-unfinished bootstrap readme
+# Bootstrap
+This project demonstrates using bootstrap to build responsive pages with key bootstrap features. The assignment aims to reinforce Bootstrap concepts, like component customization, grid layout, and responsive design.
