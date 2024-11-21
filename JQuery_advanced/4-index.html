@@ -46,12 +46,14 @@
             }
 
             function replaceFamilyTree() {
-                $('table body').html(`
-                    <tr>
-                        <td>Gerard</td>
-                        <td>Bonissa</td>
-                    </tr>
-                `);
+                $('tbody').html(
+                    $('<tr>')
+                        .append(
+                            $('<td></td>').text('Gerard'),
+                            $('<td></td>').text('Bonissa')
+                        ),
+                    $('</tr>')
+                );
             }
 
             createFamilyTree();
