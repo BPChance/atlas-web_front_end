@@ -53,8 +53,25 @@
                 });
             }
 
+            function sendForm() {
+                $('body').after('<p>About to send the query to the API</p>');
+
+                // create data object from form input
+                const data = {
+                    author: $('#author').val(),
+                    title: $('#title').val()
+                };
+
+                $.post('https://localhost:3000/posts', data, function(response) {
+                    addPostRow(response);
+                }).fail(function() {
+                    alert('Error sending the POST query');
+                });
+            }
+
             $(document).ready(function() {
                 listPosts();
+                buildForm();
             });
         </script>
     </body>
