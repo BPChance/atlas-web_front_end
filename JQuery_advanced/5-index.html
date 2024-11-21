@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Task 0</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" type="application/javascript"></script>
+        <style>
+            .remove-cell {
+                background-color: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <script type="application/javascript">
+            function createFamilyTree() {
+                const table = $('<table></table>');
+
+                const thead = $('<thead></thead>');
+                const headRow = $('<tr></tr>');
+                headRow.append(
+                    $('<th></th>').text('Firstname'),
+                    $('<th></th>').text('Lastname')
+                );
+                thead.append(headRow);
+                table.append(thead);
+
+                const tbody = $('<tbody></tbody>');
+                table.append(tbody);
+
+                $('body').append(table)
+            }
+
+            function addNewMember(firstName, lastName) {
+                const row = $('<tr></tr>');
+
+                const firstNameCell = $('<td></td>').text(firstName);
+                const lastNameCell = $('<td></td>').text(lastName);
+                const removeCell = $('<td></td>').text('(x)').addClass('remove-cell');
+
+                removeCell.click(function () {
+                    $(this).parent().remove();
+                });
+
+                row.append(firstNameCell, lastNameCell, removeCell);
+
+                $('table tbody').append(row);
+            }
+
+            createFamilyTree();
+
+            addNewMember('Guillaume', 'Salva');
+            addNewMember('Arielle', 'Snizt');
+            addNewMember('Fanette', 'Snizt');
+            addNewMember('Gerard', 'Snizt');
+            addNewMember('Victor', 'Salva');
+        </script>
+    </body>
+</html>
