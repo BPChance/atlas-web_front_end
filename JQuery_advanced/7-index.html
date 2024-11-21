@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Task 0</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="application/javascript"></script>
+    </head>
+    <body>
+        <script type="application/javascript">
+            function createSearchForm() {
+                //input and submit
+                const input = $('<input type="text">');
+                const submitButton = $('<input type="submit" value="Search">');
+                const ul = $('<ul></ul>'); // empty list
+
+                $('body').append(input, submitButton, ul);
+
+                submitButton.click(function() {
+                    const searchQuery = input.val();
+                    queryWikipedia(searchQuery);
+                })
+            }
+
+            function addNewArticle(id, title, snippet) {
+                const li = $('<li></li>'); // new list
+
+                const firstParagraph = $('<p></p>').append(
+                    $('<span></span>').text('id - '),
+                    $('<b></b>').text(title)
+                );
+
+                const secondParagraph = $('<p></p>').html(snippet); // second para w snippet
+
+                li.append(firstParagraph, secondParagraph);
+
+                $('ul').append(li);
+            }
+
+            function queryWikipedia(search) {
+                const url = 'https://en.wikipedia.org/w/api.php';
+
+                const data = {
+                    action: 'query',
+                    format: 'json',
+                    list: 'search',
+                    srsearch: search,
+                    utf8: 1
+                };
+
+                $.ajax({
+                    url: url,
+                    data: data,
+                    dataType: 'jsonp',
+                    success: function(response) {
+                        $('ul').empty();
+
+                        const searchResults = response.query.search;
+                        searchResults.forEach(function(result) {
+                            addNewArticle(result.pageid, result.title, result.snippet);
+                        });
+                    }
+                });
+            }
+
+            $(document).ready(function() {
+                createSearchForm();
+            });
+        </script>
+    </body>
+</html>
