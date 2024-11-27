@@ -1,0 +1,2 @@
+## Cookies
+This project is to help understand how to use JavaScript for cookies and web storage and how to create, read, and manage cookies, as well as store data using localStorage and sessionStorage.
